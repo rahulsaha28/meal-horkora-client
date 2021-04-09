@@ -1,0 +1,20 @@
+.google-btn{
+    background-color: rgb(68, 150, 245);
+    color:white;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: .2rem;
+    height: 3rem;
+}
+
+.google-icon{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:red;
+    background-color: whitesmoke;
+    border:1px sold red;
+}

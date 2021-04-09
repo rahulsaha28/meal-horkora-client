@@ -1,0 +1,56 @@
+.s-medium{
+    width:21rem;
+    height:21rem;
+}
+
+.price{
+    font-size: 2rem;
+}
+
+.edit-btn{
+    border:1px solid rgba(128, 127, 127, 0.589);
+    border-radius: .5rem;
+    width:5rem;
+}
+
+.edit-btn-bt{
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.add-btn{
+    background-color: goldenrod;
+    color:white;
+    width:7rem;
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 1.2rem;
+}
+.add-btn:hover{
+    box-shadow: .1rem .2rem .2rem gray;
+    
+}
+
+.link-color{
+    color:white;
+    text-decoration: none;
+}
+.link-color:link{
+    text-decoration: none;
+}
+
+.link-color:hover{
+    color:white;
+}
+
+.edit-btn-bt:focus{
+    color:red;
+}
+
+@media (max-width:500px) {
+    .edit-flex{
+        display: flex;
+        flex-direction: column-reverse !important;
+    }
+}

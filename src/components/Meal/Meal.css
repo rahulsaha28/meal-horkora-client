@@ -1,0 +1,6 @@
+.meal-cart{
+    transition: .3s;
+}
+.meal-cart:hover{
+    box-shadow: 2px 8px 8px gray;
+}

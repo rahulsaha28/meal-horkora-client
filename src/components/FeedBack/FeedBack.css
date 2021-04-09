@@ -1,0 +1,27 @@
+.feedback-section>h3{
+   color:indigo;
+}
+
+.feedback-section>p{
+    color:rgb(145, 143, 143);
+}
+
+.green{
+    color:green;
+}
+
+.edit-card-text{
+    font-weight: 500;
+    color:rgb(163, 157, 157)
+}
+
+.edit-button{
+    background-color: white;
+    color:teal;
+    font-size: 1.2rem;
+}
+
+.edit-card{
+    border-top-left-radius: 1.1rem;
+    border-top-right-radius: 1.1rem;
+}

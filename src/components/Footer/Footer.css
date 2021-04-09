@@ -1,0 +1,15 @@
+.edit-footer{
+    background-color: black;
+    width:100%;
+    height: 300px;
+    color:white;
+}
+
+.s-70x70{
+    width:70px;
+    height:70px;
+}
+
+.edit-ul{
+    list-style: none;
+}

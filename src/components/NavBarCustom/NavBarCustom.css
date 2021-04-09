@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+:root{
+    --primary:#09aeae;
+    --icon:#1fae51;
+}
+
+.meal{
+    color:orange;
+    font-weight: 700;
+}
+
+nav{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.s-70x70{
+    width:70px;
+    height:70px;
+    
+}
+
+.bg-blue{
+    background-color: rgba(128, 128, 128, 0.014);
+}
+
+
+.cart-icon{
+    color:gray;
+    
+}
+
+.bt-primary{
+    background-color: var(--primary);
+    border-radius: .2rem;
+    width:5rem;
+    display: flex;
+    justify-content: center;
+    color:white !important
+}

@@ -1,0 +1,22 @@
+.edit-form{
+    width: 40%;
+}
+
+.login-btn{
+    width:100%;
+}
+
+.extra{
+    margin-top: 1.4rem;
+    margin-bottom: 1.5rem;
+    color:rgb(197, 115, 38);
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 900px) {
+    .edit-form{
+        width: 80%;
+    }
+}
