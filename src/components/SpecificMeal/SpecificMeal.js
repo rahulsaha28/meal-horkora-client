@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 import { Icon } from 'rsuite';
 import { UserContext } from '../../App';
 import mealsData from '../../data.json';
-import { useLocalStorage } from '../Utility/StoringUser';
+import { message } from '../Utility/message';
+
 import './SpecificMeal.css';
 
 const SpecificMeal = () => {
     const { type, id } = useParams();
     const [meal, setMeal] = useState({});
     const [quantity, setQuantity] = useState(0);
-    // const { mealCart, setMealCart } = useContext(UserContext);
-    const [ mealCart, setMealCart] = useLocalStorage('mealCart', []); 
+    const { mealCart, setMealCart } = useContext(UserContext);
+   
     const history = useHistory();
 
     
@@ -31,7 +32,7 @@ const SpecificMeal = () => {
 
         try{
             setMealCart(newMealCart);
-        //    history.replace('/delivery-detail');
+            message('success', 'Food Added to Cart Successfully');
         }
         catch(error){
             console.log("error");

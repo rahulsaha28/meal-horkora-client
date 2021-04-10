@@ -5,17 +5,18 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import Icon from 'rsuite/lib/Icon/Icon';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
-import { localUserDelete, localUserGet } from '../Utility/StoringUser';
-import { Dropdown } from 'rsuite';
+import { localUserDelete, localUserGet, useLocalStorage } from '../Utility/StoringUser';
+import { Badge, Dropdown } from 'rsuite';
 
 const NavBarCustom = () => {
     const { user, setUser } = useContext(UserContext);
+    const { mealCart } = useContext(UserContext);
     useEffect(()=>{
         setUser(localUserGet());
     },[])
 
     const handelSignOut = ()=>{
-        localUserDelete();
+        
         setUser({});
 
     }
@@ -32,7 +33,10 @@ const NavBarCustom = () => {
                     <ul className="navbar-nav ms-auto mb-2">
                         <li className="nav-item me-2">
                             <Link to="/delivery-detail" className="nav-link">
-                               <Icon className="cart-icon" size="lg" icon="shopping-cart"/>
+                                <Badge content={mealCart.length===0?"":mealCart.length}>
+                                  <Icon className="cart-icon" size="lg" icon="shopping-cart"/>  
+                                </Badge>
+                               
                             </Link>
                             </li>
                          {

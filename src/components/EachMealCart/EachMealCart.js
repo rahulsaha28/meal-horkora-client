@@ -12,8 +12,9 @@ const EachMealCart = (props) => {
     const history = useHistory()
 
    
+    const {mealCart, setMealCart } = useContext(UserContext);
 
-    const {mealCart, setMealCart,  setTotalCount, setTotal} = useContext(MealContext);
+    const { setTotalCount, setTotal} = useContext(MealContext);
 
     
 
@@ -46,12 +47,25 @@ const newHandelPlusMinus = (type)=>{
 }
 
     
+//  delete cart
+const handelDelete = ()=>{
 
+    PromiseSolve(()=>{
+        const notEqualMealCart = mealCart.filter(meal => meal.id !== id);
+        setMealCart(notEqualMealCart);
+        return notEqualMealCart;
+    }).then(result=>{
+        setTotalCount(result.reduce((sum, mealdata) => sum + mealdata.quantity, 0));
+        setTotal(result.reduce((sum, meal)=>sum+meal.quantity*meal.price,0));
+    })
 
+}
 
 
 
     return (
+
+        
         <div className="d-flex justify-content-between align-items-center mt-3 meal-cart-2">
             <img style={{ width: "5rem", height: "5rem" }} src={image} alt="" />
             <div>
@@ -67,7 +81,10 @@ const newHandelPlusMinus = (type)=>{
                     <Icon icon="plus" />
                 </button>
             </div>
+            <button className="delete" onClick={handelDelete} ><Icon icon="close" /></button>
         </div>
+        
+    
     );
 };
 

@@ -1,0 +1,24 @@
+.rider-img{
+    width:6rem;
+    height:6rem;
+}
+
+.cap{
+    width:2rem;
+    height:2rem;
+}
+
+.place-cart{
+    background-color: rgb(231, 229, 229);
+}
+
+.info , .info-r{
+    background-color: white;
+    padding:.7rem;
+}
+
+
+
+.date{
+    color:black;
+}

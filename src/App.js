@@ -11,32 +11,39 @@ import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import { createContext, useState } from 'react';
 import DeliveryDetail from './components/DeliveryDetail/DeliveryDetail';
-import { localMealCartGet } from './components/Utility/StoringUser';
+import { localMealCartGet, useLocalStorage } from './components/Utility/StoringUser';
+import LoginRoute from './components/LoginRoute/LoginRoute';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import LogoutRoute from './components/LogoutRoute/LogoutRoute';
 
 
 export const UserContext = createContext();
 
 function App() {
-  const [user, setUser] = useState({});
-  // const [mealCart, setMealCart] = useState(localMealCartGet()?.length>0? localMealCartGet() :[]);
+  // const [user, setUser] = useState({});
+  const [user, setUser] = useLocalStorage('user', {});
+  const [mealCart, setMealCart] = useLocalStorage('mealCart', []);
   
   return (
     <div className="app">
       <Router>
-        <UserContext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={{user, setUser, mealCart, setMealCart}}>
           <NavBarCustom />
         
 
         <Switch>
+          <LoginRoute path="/place-order">
+            <PlaceOrder/>
+          </LoginRoute>
           <Route path="/delivery-detail">
             <DeliveryDetail/>
           </Route>
-          <Route path="/create-account">
+          <LogoutRoute path="/create-account">
               <SignUp/>
-          </Route>
-          <Route path="/login">
+          </LogoutRoute>
+          <LogoutRoute path="/login">
             <Login/>
-          </Route>
+          </LogoutRoute>
           <Route path="/meal/:type/:id">
               <SpecificMeal/>
           </Route>

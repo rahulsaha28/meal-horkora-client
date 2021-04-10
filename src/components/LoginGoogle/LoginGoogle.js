@@ -3,7 +3,7 @@ import './LoginGoogle.css';
 import { Icon } from 'rsuite';
 import { fireBaseInitialization, googleLogInSystem } from '../LoginManagement/LoginManagement';
 import { UserContext } from '../../App';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { localUserSave } from '../Utility/StoringUser';
 
 
@@ -13,7 +13,14 @@ const LoginGoogle = () => {
 
     const { user, setUser } = useContext(UserContext);
 
+    // history>location>state>from>pathname
     const history = useHistory();
+    
+
+    const {from} = history.location.state?history.location.state:{from:{pathname:'/'}};
+
+
+    
 
     const handelSignIn = () => {
 
@@ -26,12 +33,12 @@ const LoginGoogle = () => {
                     validation: true
                 }
                 setUser(newUser);
-                history.replace('/');
+                history.replace(from);
 
             })
     }
 
-    localUserSave(user);
+    
 
     return (
         <div className="mb-5 col-md-4 d-flex flex-column">
