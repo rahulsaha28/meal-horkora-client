@@ -13,7 +13,7 @@ const DeliveryDetail = () => {
     const { register, handleSubmit, formState: { errors }, watch } = useForm({});
     let rd = watch('rd')
 
-    //    const [mealCart, setMealCart] = useState(localMealCartGet()?.length>0? localMealCartGet() :[]);
+    
 
     const [mealCart, setMealCart] = useLocalStorage("mealCart", []);
     const [ totalCount, setTotalCount ] = useState(mealCart.reduce((sum, mealdata) => sum + mealdata.quantity, 0));
@@ -25,34 +25,6 @@ const DeliveryDetail = () => {
     const handelDeliver = data => {
         console.log(data)
     }
-
-    const handelPlusMinus = (type, newquantity, setNewQuantity, callBack) => {
-
-      
-
-        new Promise((resolve, reject)=>{
-
-            const c = type==="minus"?setNewQuantity(newquantity>0?newquantity-1:0):setNewQuantity(newquantity+1);
-            
-            if(!c){
-
-              type==="minus"?resolve(newquantity>0?newquantity-1:0):resolve(newquantity+1)  
-            }
-            
-        }).then((result)=>{
-         
-           callBack(result) 
-        })
-        
-        
-
-        
-
-    }
-
-   
-
-
 
 
     return (
@@ -87,7 +59,7 @@ const DeliveryDetail = () => {
                     </div>
                     <div>
                        
-                       <MealContext.Provider value={{ mealCart, setMealCart, handelPlusMinus, setTotalCount, setTotal }}>
+                       <MealContext.Provider value={{ mealCart, setMealCart, setTotalCount, setTotal }}>
                            {
                                mealCart.map(meal=><EachMealCart key={Math.random()} meal={meal} />)
                            }

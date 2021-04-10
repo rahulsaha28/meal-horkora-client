@@ -1,0 +1,11 @@
+.meal-cart-2{
+    background-color: rgb(228, 222, 222);
+    padding: .5rem;
+    border-radius: .3rem;
+}
+
+.new-edit-btn, .new-edit-btn-bt{
+    background-color: rgb(38, 23, 248);
+    color:white;
+}
+
