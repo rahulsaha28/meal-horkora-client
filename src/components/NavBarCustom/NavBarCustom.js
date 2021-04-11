@@ -31,10 +31,13 @@ const NavBarCustom = () => {
                 </button>
                 <div id="FoodNavBar" className="collapse navbar-collapse">
                     <ul className="navbar-nav ms-auto mb-2">
-                        <li className="nav-item me-2">
-                            <Link to="/" className="nav-link">
+                        <li class="nav-item me-2">
+                           <Link to="/" className="nav-link">
                                 Home
-                            </Link>
+                            </Link> 
+                        </li>
+                        <li className="nav-item me-2">
+                            
                             <Link to="/delivery-detail" className="nav-link">
                                 <Badge content={mealCart.length===0?"":mealCart.length}>
                                   <Icon className="cart-icon" size="lg" icon="shopping-cart"/>  
